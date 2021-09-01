@@ -13,7 +13,8 @@ function getFactAjax() {
 
   xhr.onload = function () {
     if (this.status === 200 && number !== "") {
-      console.log(this.responseText);
+      fact.style.display = "block";
+      factText.innerText = this.responseText;
     }
   };
 
