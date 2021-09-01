@@ -27,7 +27,12 @@ function getFactFetch() {
   fetch("http://numbersapi.com/" + number)
     .then((response) => response.text())
     .then((data) => {
-      console.log(data);
+      if (number !== "") {
+        fact.style.display = "block";
+        factText.innerText = data;
+      } else {
+        fact.style.display = "none";
+      }
     })
     .catch((err) => console.log(err));
 }
